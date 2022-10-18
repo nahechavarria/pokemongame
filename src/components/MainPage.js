@@ -57,7 +57,7 @@ const MainPage = () => {
 	return (
 		<div className={styles.app}>
 			<div className={styles.header}>
-				<h1>Pokemon Card</h1>
+				<h1>Pokemon Game</h1>
 				<button onClick={newgame}>New Game</button>
 			</div>
 			<div className={styles.body}>
