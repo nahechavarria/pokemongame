@@ -21,7 +21,6 @@
 
 .container {
 	max-width: 660px;
-	max-height: 500px;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	gap: 1rem;
@@ -53,4 +52,17 @@ button {
 
 button:hover {
 	background-color: rgb(211, 62, 62);
+}
+
+@media (max-width: 800px) {
+	.container {
+		max-width: 450px;
+	}
+}
+
+@media (max-width: 500px) {
+	.container {
+		grid-template-columns: 1fr 1fr 1fr;
+		max-width: 330px;
+	}
 }
