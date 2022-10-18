@@ -61,42 +61,45 @@ const MainPage = () => {
 				<button onClick={newgame}>New Game</button>
 			</div>
 			<div className={styles.body}>
-				{loading ? (
-					<SkeletonLoader />
-				) : pokemons && pokemons.length > 0 ? (
-					pokemons.map((pokemon, index) => {
-						let status = 'normal';
+				<div className={styles.container}>
+					{loading ? (
+						<SkeletonLoader />
+					) : pokemons && pokemons.length > 0 ? (
+						pokemons.map((pokemon, index) => {
+							let status = 'normal';
 
-						if (
-							selectedOne &&
-							pokemon.name === selectedOne.name &&
-							index === selectedOne.index
-						)
-							status = 'flipped';
+							if (
+								selectedOne &&
+								pokemon.name === selectedOne.name &&
+								index === selectedOne.index
+							)
+								status = 'flipped';
 
-						if (
-							selectedTwo &&
-							pokemon.name === selectedTwo.name &&
-							index === selectedTwo.index
-						)
-							status = 'flipped';
+							if (
+								selectedTwo &&
+								pokemon.name === selectedTwo.name &&
+								index === selectedTwo.index
+							)
+								status = 'flipped';
 
-						if (burned.find((name) => name === pokemon.name)) status = 'burned';
+							if (burned.find((name) => name === pokemon.name))
+								status = 'burned';
 
-						return (
-							<Card
-								key={pokemon.name + index}
-								pokemon={pokemon}
-								onClick={handleClick}
-								index={index}
-								status={status}
-								disabled={disabled}
-							/>
-						);
-					})
-				) : (
-					<div>No data</div>
-				)}
+							return (
+								<Card
+									key={pokemon.name + index}
+									pokemon={pokemon}
+									onClick={handleClick}
+									index={index}
+									status={status}
+									disabled={disabled}
+								/>
+							);
+						})
+					) : (
+						<div>No data</div>
+					)}
+				</div>
 			</div>
 			<div className={styles.footer}>Turns: {turns}</div>
 		</div>

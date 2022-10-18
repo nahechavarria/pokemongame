@@ -14,9 +14,14 @@
 
 .body {
 	height: 70%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
 	max-width: 660px;
 	max-height: 500px;
-	margin: 0 auto;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	gap: 1rem;
